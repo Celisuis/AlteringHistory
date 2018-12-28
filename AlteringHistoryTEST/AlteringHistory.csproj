@@ -7,8 +7,8 @@
     <ProjectGuid>{810A2A81-4685-4207-85AE-27ABC23E16A8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AlteringHistoryTEST</RootNamespace>
-    <AssemblyName>AlteringHistoryTEST</AssemblyName>
+    <RootNamespace>AlteringHistory</RootNamespace>
+    <AssemblyName>AlteringHistory</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
