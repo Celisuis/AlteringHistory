@@ -25,10 +25,13 @@ namespace AlteringHistory
             {
                 try
                 {
-                    buildingManager.m_buildings.m_buffer[x].m_flags |= Building.Flags.Historical;
-                    buildingsAltered++;
+                    if ((buildingManager.m_buildings.m_buffer[x].m_flags & Building.Flags.Created) == Building.Flags.Created)
+                    {
+                        buildingManager.m_buildings.m_buffer[x].m_flags |= Building.Flags.Historical;
+                        buildingsAltered++;
+                    }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     UIView.ForwardException(new ModException("[Altering History] Failed to Alter Buildings.", ex));
                 }
@@ -53,8 +56,11 @@ namespace AlteringHistory
             {
                 try
                 {
-                    buildingManager.m_buildings.m_buffer[x].m_flags &= ~Building.Flags.Historical;
-                    buildingsAltered++;
+                    if ((buildingManager.m_buildings.m_buffer[x].m_flags & Building.Flags.Created) == Building.Flags.Created)
+                    {
+                        buildingManager.m_buildings.m_buffer[x].m_flags &= ~Building.Flags.Historical;
+                        buildingsAltered++;
+                    }
                 }
                 catch (Exception ex)
                 {

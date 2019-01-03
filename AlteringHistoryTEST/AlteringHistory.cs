@@ -10,9 +10,11 @@ namespace AlteringHistory
 {
     public class AlteringHistory : IUserMod
     {
-        public string Name => "Altering History TEST";
+        public const string Version = "1.0.5";
 
-        public string Description => "TEST BUILD: Enable/Disable Historical Building Settings on a Global Scale";
+        public string Name => $"Altering History Version: {Version}";
+
+        public string Description => "Enable/Disable Historical Building Settings on a Global Scale.";
         
 
         public AlteringHistory()
@@ -33,6 +35,7 @@ namespace AlteringHistory
             helper.AddButton("Make All Buildings Non-Historic", BuildingManagerExtension.DisableHistoricalBuildings);
 
             helper.AddCheckbox("Auto-Enable Historic Buildings", Manager.Current_Settings.Auto_Historic, OnAutoCheckChanged);
+            
             
         }
 
