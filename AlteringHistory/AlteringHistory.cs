@@ -1,7 +1,6 @@
 ﻿using AlteringHistory;
 using ColossalFramework.IO;
 using ColossalFramework.UI;
-using Harmony;
 using ICities;
 using System;
 using System.IO;
@@ -11,9 +10,11 @@ namespace AlteringHistory
 {
     public class AlteringHistory : IUserMod
     {
-        public string Name => "Altering History";
+        public const string Version = "1.0.5";
 
-        public string Description => "Enable/Disable Historical Building Settings on a Global Scale";
+        public string Name => $"Altering History Version: {Version}";
+
+        public string Description => "Enable/Disable Historical Building Settings on a Global Scale.";
         
 
         public AlteringHistory()
@@ -30,7 +31,11 @@ namespace AlteringHistory
 
         public void OnSettingsUI(UIHelper helper)
         {
+            helper.AddButton("Make All Buildings Historic", BuildingManagerExtension.EnableHistoricalBuildings);
+            helper.AddButton("Make All Buildings Non-Historic", BuildingManagerExtension.DisableHistoricalBuildings);
+
             helper.AddCheckbox("Auto-Enable Historic Buildings", Manager.Current_Settings.Auto_Historic, OnAutoCheckChanged);
+            
             
         }
 
